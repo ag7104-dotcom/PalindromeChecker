@@ -5,10 +5,17 @@ import java.util.Scanner;
 public class palindromeCheck{
 
     public static boolean isPalindrome(String str){
-        for (int i = 0; i < str.length() / 2; i++) {
-            if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
+        char[] chars = str.toCharArray();
+        
+        int start = 0;
+        int end = chars.length - 1;
+        
+        while (start < end) {
+            if (chars[start] != chars[end]) {
                 return false;
             }
+            start++;
+            end--;
         }
         return true;
     }
